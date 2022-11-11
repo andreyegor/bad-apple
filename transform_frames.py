@@ -27,7 +27,7 @@ def get_converted_image(path, width=204):
 def get_image_data(path, width=204):
     with Image.open(path) as image:
         true_width, true_height = image.size
-        height = int(width*(true_height/true_width))
+        height = int(width*(true_height/true_width)) - 60
         image = image.resize((width, height), Image.ANTIALIAS)
         pixels = list(image.getdata())
     for i, e in enumerate(pixels):
