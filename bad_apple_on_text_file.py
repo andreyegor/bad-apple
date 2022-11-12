@@ -2,7 +2,7 @@ import transform_frames
 from time import sleep
 
 path = 'screen.txt'
-for i in range(1, 3970, 3):
+for i in range(1, 6571, 3):
     with open(path, 'w+') as f:
         f.seek(0)
         braille = transform_frames.get_converted_image(

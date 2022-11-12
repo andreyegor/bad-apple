@@ -6,7 +6,7 @@ pattern = data.braille_pattern
 
 
 def start():
-    for i in range(1, 3970):
+    for i in range(1, 6571):
         braille = get_converted_image(f'frames/frame{i}.jpg')
         frame = ''
         for e in braille:
