@@ -7,7 +7,7 @@ import transform_frames
 import config
 
 # я без понятия как сделать это быстрее
-token = config.settings.token[0]
+token = config.discord_bot_settings.token[0]
 
 intent = discord.Intents.default()
 intent.members = True
