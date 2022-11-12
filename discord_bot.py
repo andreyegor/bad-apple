@@ -26,7 +26,7 @@ async def test(ctx, arg):  # создаем асинхронную фунцию 
 
 @bot.command(pass_context=True)
 async def bad_apple(ctx):
-    await ctx.send(f"Нет блин, злая груша, а злая она потому что пинг {bot.latency} это довольно много")
+    await ctx.send(f"Нет блин, добрая груша, но яблоко злое, ф злое оно потому что пинг {bot.latency} это довольно много")
     time.sleep(1)
     i = 350
     while i < 6571:
