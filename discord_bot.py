@@ -5,7 +5,10 @@ import time
 
 import transform_frames
 import config
+import data
 
+transform_frames.pattern = data.mono_braille_pattern
+print(data.mono_braille_pattern[(0, 0, 0, 0, 0, 0)])
 # я без понятия как сделать это быстрее
 token = config.discord_bot_settings.token[0]
 
@@ -26,7 +29,7 @@ async def bad_apple(ctx):
     await ctx.send(f"Нет блин, злая груша, а злая она потому что пинг {bot.latency} это довольно много")
     time.sleep(1)
     i = 350
-    while i < 1500:
+    while i < 3000:
         old_time = time.time()
         braille = transform_frames.get_converted_image(
             f'frames/frame{i}.jpg', width=150)

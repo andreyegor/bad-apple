@@ -2,6 +2,8 @@ from PIL import Image
 import data
 from time import sleep
 
+pattern = data.braille_pattern
+
 
 def start():
     for i in range(1, 3970):
@@ -55,7 +57,7 @@ def convert_blocks_to_braille(blocks):
     for e in blocks:
         braille.append([])
         for j in e:
-            braille[-1].append(data.braille_pattern[j])
+            braille[-1].append(pattern[j])
     return braille
 
 
