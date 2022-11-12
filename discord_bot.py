@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-from time import sleep
+import time
 
 import transform_frames
 import config
@@ -24,14 +24,17 @@ async def test(ctx, arg):  # создаем асинхронную фунцию 
 @bot.command(pass_context=True)
 async def bad_apple(ctx):
     await ctx.send(f"Нет блин, злая груша, а злая она потому что пинг {bot.latency} это довольно много")
-    sleep(1)
-    for i in range(393, 600):
+    time.sleep(1)
+    i = 350
+    while i < 1500:
+        old_time = time.time()
         braille = transform_frames.get_converted_image(
             f'frames/frame{i}.jpg', width=150)
         frame = ''
         for e in braille:
             frame += ''.join(e)+'\n'
-        await ctx.send(frame)
-
+        await ctx.channel.send(frame)
+        i += int((time.time()-old_time)*30)
+    await ctx.send('усё')
 if __name__ == "__main__":
     bot.run(token)
