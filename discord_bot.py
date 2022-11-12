@@ -33,5 +33,5 @@ async def bad_apple(ctx):
             frame += ''.join(e)+'\n'
         await ctx.send(frame)
 
-
-bot.run(token)
+if __name__ == "__main__":
+    bot.run(token)
