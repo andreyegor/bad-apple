@@ -7,10 +7,7 @@ pattern = data.braille_pattern
 
 def start():
     for i in range(1, 6571):
-        braille = get_converted_image(f'frames/frame{i}.jpg')
-        frame = ''
-        for e in braille:
-            frame += ''.join(e)+'\n'
+        frame = get_converted_image(f'frames/frame{i}.jpg')
         print(frame)
         sleep(1/30)
 
@@ -53,11 +50,11 @@ def get_blocks(image_data, width=2, heigth=3):
 
 
 def convert_blocks_to_braille(blocks):
-    braille = []
+    braille = ''
     for e in blocks:
-        braille.append([])
         for j in e:
-            braille[-1].append(pattern[j])
+            braille += pattern[j]
+        braille += '\n'
     return braille
 
 

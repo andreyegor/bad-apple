@@ -34,11 +34,8 @@ async def bad_apple(ctx):
     i = 350
     while i < 6571:
         old_time = time.time()
-        braille = transform_frames.get_converted_image(
+        frame = transform_frames.get_converted_image(
             f'frames/frame{i}.jpg', width=150)
-        frame = ''
-        for e in braille:
-            frame += ''.join(e)+'\n'
         await message.edit(content=frame)
         i += int((time.time()-old_time)*30)
     await ctx.send('усё')
